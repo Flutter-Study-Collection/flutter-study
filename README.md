@@ -9,6 +9,7 @@
 |Chan|chanjungskim@gmail.com|꾸준히 잘 유지되고, 같이 성장할 수 있는 스터디가 되었으면 좋겠습니다.|
 |KimNa|skgus43@gmail.com|느슨해진 스터디에 긴장감을 줘~ 많이 배워가겠습니다.|
 |Moon|tmdeoans@snu.ac.kr|플러터 고수가 되는 그날까지! 열심히 하겠습니다|
+|Park|munchk8150@gmail.com|플러터 제가 한번 해보겠습니다 ! |
 
 ## Rule
 
