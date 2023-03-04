@@ -85,8 +85,11 @@
 - [공공데이터](https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=API&keyword=&detailKeyword=&publicDataPk=&recmSe=&detailText=&relatedKeyword=&commaNotInData=&commaAndData=&commaOrData=&must_not=&tabId=&dataSetCoreTf=&coreDataNm=&sort=inqireCo&relRadio=&orgFullName=&orgFilter=&org=&orgSearch=&currentPage=1&perPage=10&brm=&instt=&svcType=&kwrdArray=&extsn=&coreDataNmArray=&pblonsipScopeCode=)
 
 ### Our Trace
-- [Week00 - 첫 모임](/week00/)
-- [Week01 - Dart ](/week01/)
+
+|  회차  |      대주제     |           목표          |[참여 내용](/attendance.md)   |
+|-------|---------------|------------------------|----------------------------|
+|[Week00|첫 모임](/week00/)|간단한 자기소개 및 방향 정하기|불참: Chan(늦잠),KimNa,Park   |
+|[Week01|Dart 언어](/week01/)|Dart언어에 대한 이해    |-                           |
 
 ## 다뤄볼만한 주제:
 
