@@ -7,9 +7,8 @@
 
 - Moon: 플러터의 모든 위젯에 대해 공부하는걸 목표
 
-관심있는 유튜브 채널:
-https://www.youtube.com/watch?v=kj_tldMmu4w&list=PL82uaKJraAILRBFE1XhCyfvu-Fclc6vv1
-개인 블로그: https://www.cozyblog.io/@moon/posts/flutter-explore-widget-1
+[관심있는 유튜브 채널](https://www.youtube.com/watch?v=kj_tldMmu4w&list=PL82uaKJraAILRBFE1XhCyfvu-Fclc6vv1)
+[개인 블로그](https://www.cozyblog.io/@moon/posts/flutter-explore-widget-1)
 
 - Sejun: TDD와 클린 코드에 관심있음
 
