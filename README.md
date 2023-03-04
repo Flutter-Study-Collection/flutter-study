@@ -85,18 +85,8 @@
 - [공공데이터](https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=API&keyword=&detailKeyword=&publicDataPk=&recmSe=&detailText=&relatedKeyword=&commaNotInData=&commaAndData=&commaOrData=&must_not=&tabId=&dataSetCoreTf=&coreDataNm=&sort=inqireCo&relRadio=&orgFullName=&orgFilter=&org=&orgSearch=&currentPage=1&perPage=10&brm=&instt=&svcType=&kwrdArray=&extsn=&coreDataNmArray=&pblonsipScopeCode=)
 
 ### Our Trace
-- [Week1 - ](week1.md)
-- [Week2 - ](week2.md)
-- [Week3 - ](week3.md)
-- [Week4 - ](week4.md)
-- [Week5 - ](week5.md)
-- [Week6 - ](week6.md)
-- [Week7 - ](week7.md)
-- [Week8 - ](week8.md)
-- [Week9 - ](week9.md)
-- [Week10 - ](week10.md)
-- [Week11 - ](week11.md)
-- [Week12 - ](week12.md)
+- [Week00 - ](/week00/)
+- [Week01 - ](/week01/)
 
 ## 다뤄볼만한 주제:
 
