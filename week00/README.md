@@ -17,9 +17,13 @@
 - Chan: 로드맵을 참고하여 입문부터해서 성장하기 다양한 주제로 공부 목표
 
 다뤘으면 하는 키워드: Dart, UI, 에니메이션, 상태관리, 네트워크, 로컬 저장, 아키텍쳐, 플랫폼별 특징, 테스팅
+
 공부할만한 자료: 
+
 [Effective Dart](https://dart.dev/guides/language/effective-dart)(참고: [Lint](https://pub.dev/packages/lint))
+
 [Dart in Action](https://www.amazon.com/Dart-Action-Chris-Buckett/dp/1617290866)
+
 [Flutter in Action](http://www.yes24.com/Product/Goods/97008810)
 
 - Park: 
