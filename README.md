@@ -85,8 +85,8 @@
 - [공공데이터](https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=API&keyword=&detailKeyword=&publicDataPk=&recmSe=&detailText=&relatedKeyword=&commaNotInData=&commaAndData=&commaOrData=&must_not=&tabId=&dataSetCoreTf=&coreDataNm=&sort=inqireCo&relRadio=&orgFullName=&orgFilter=&org=&orgSearch=&currentPage=1&perPage=10&brm=&instt=&svcType=&kwrdArray=&extsn=&coreDataNmArray=&pblonsipScopeCode=)
 
 ### Our Trace
-- [Week00 - ](/week00/)
-- [Week01 - ](/week01/)
+- [Week00 - 첫 모임](/week00/)
+- [Week01 - Dart ](/week01/)
 
 ## 다뤄볼만한 주제:
 
