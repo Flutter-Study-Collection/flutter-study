@@ -90,8 +90,7 @@
 
 ## 다뤄볼만한 주제:
 
-- 제안자 이름: 내용
-- 제안자 이름: 내용
+- Moon: [유튜브 영상](https://www.youtube.com/watch?v=kj_tldMmu4w)을 따라 모든 위젯 다뤄보기
 
 ## 활동
 
