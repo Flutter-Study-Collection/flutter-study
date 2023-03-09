@@ -191,7 +191,7 @@ print(Rectangle());
 
 ```
 abstract class Shape {
-  num get area; // 상속 받으면 필수로 구현해야함
+  num get area; // 상속 받으면 필수로 구현해야함. get은 getter를 의미함.
 }
 ```
 ```
@@ -215,16 +215,121 @@ class Square implements Shape { // Shape 상속
 
 ---
 
-Circle과 Square은 Shape의 하위 클래스이다
--> Shape 타입으로 활용가능하다
+Factory 구현
+1. top-level function으로 구현하며, type param에 따라 객체 생성 후 반환함.
+```
+// top-level function: 아무 위치에서 정의 가능한 함수
+Shape shapeFactory(String type) {
+  if (type == 'circle') return Circle(2);
+  if (type == 'square') return Square(2);
+  throw 'Can\'t create $type.';
+}
+```
 
+```
+// 사용 시,
+final circle = shapeFactory('circle');
+final square = shapeFactory('square');
+```
+
+---
+
+2. 생성자로 Factory를 구현
+```
+abstract class Shape {
+  factory Shape(String type) { // factory 키워드 사용
+    if (type == 'circle') return Circle(2);
+    if (type == 'square') return Square(2);
+    throw 'Can\'t create $type.';
+  }
+  num get area;
+}
+```
+```
+// 사용 시,
+final circle = Shape('circle');
+final square = Shape('square');
+```
+
+---
+
+Circle과 Square은 Shape의 하위 클래스이다
+⇨ Shape 타입으로 활용가능하다
+
+```graphviz
+digraph hierarchy {
+    nodesep=1 // increases the separation between nodes
+
+    node [color=Black, fontname=Courier,shape=box] //All nodes will this shape and colour
+    edge [color=Black] //All the lines look like this
+
+    Shape->{Circle Square}
+}
+```
+
+```
+//Circle과 Square은 Shape의 종류(하위 타입)이므로 return이 가능하다. 
+Shape ...(...) {
+  ... (...) return Circle(2);
+  ... (...) return Square(2);
+  ... '...';
+}
+```
+
+---
+
+#### interface
+
+Dart 언어에는 모든 class가 interface를 정의하므로 *interface 키워드가 없다*. 하지만, 인터페이스 개념은 있다.
+
+```
+// interface 개념으로 사용되는 class.
+class Circle implements Shape {
+  final num radius;
+  Circle(this.radius);
+  num get area => pi * pow(radius, 2);
+}
+```
+Circle을 상속하면 무조건 Circle의 내용에 맞게 구현해줘야한다.
+![interface - missing error](https://i.imgur.com/Oe0kTyP.png)
+
+---
+
+```
+class Circle implements Shape {
+  final num radius;
+  Circle(this.radius);
+  num get area => pi * pow(radius, 2);
+}
+
+class CircleMock implements Circle {
+  // 인스턴스 변수 구현
+  num area = 0;
+  num radius = 0;
+}
+```
+
+---
+
+#### Function Programming
+
+nameless function(or lamda expression) 
+```
+String scream(int length) => "A${'a' * length}h!";
+```
+
+```
+// fold(), where(), join(), skip()
+values.map(scream).forEach(print);
+values.skip(1).take(3).map(scream).forEach(print);
+```
 
 ---
 
 ### 기본 스타일
 - 타입(class, enum 등)의 이름은 [UpperCamelCase](https://dart.dev/guides/language/effective-dart/style#do-name-types-using-uppercamelcase)
 - 상수값은 [lowerCamelCase](https://dart.dev/guides/language/effective-dart/style#prefer-using-lowercamelcase-for-constant-names)
-(초기 Dart에서 SCREAMING_CAPS를 사용했지만 여러 이유로 인해변경됨)
+
 ```
 class Student
 class DBIOPort // 축약된 말들은 대문자로
@@ -234,10 +339,10 @@ enum PaymentType
 const defaultTimeout = 1000;
 final urlScheme = RegExp('^([a-z]+):');
 ```
+> 초기 Dart에서 SCREAMING_CAPS를 사용했지만 여러 이유로 인해변경됨)
 
 ---
 
-- 
 - 불필요한 prefix 사용금지: _는 Dart에서는 private으로 인식하며, 그외의 이름에 prefix는 쓰지 않는다.
 - 폴더/파일명과 package, import prefixes는 [lowercase_with_underscores](https://dart.dev/guides/language/effective-dart/style#do-name-packages-and-file-system-entities-using-lowercase-with-underscores)
 ```
@@ -256,7 +361,7 @@ kDefaultTimeout
 
 ---
 
-#### Dart의 핵심 라이브러리
+#### Dart의 [Core Library](https://dart.dev/guides/libraries)
 
 - dart:core
 - dart:async
@@ -264,7 +369,7 @@ kDefaultTimeout
 - dart:collection
 - dart:math
 
-```
+---
 
 ### [Dart Codelabs](https://dart.dev/codelabs)
 
