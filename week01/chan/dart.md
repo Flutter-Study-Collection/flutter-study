@@ -361,6 +361,220 @@ kDefaultTimeout
 
 ---
 
+#### [Dart language cheatsheet](https://dart.dev/guides/language/cheatsheet)
+
+1. Declaring fields
+
+| type   | usage           |
+|--------|-----------------|
+| var    | mutable         |
+| final  | only once assign|
+| const  | compile time    |
+
+---
+
+2. Using literals
+
+| expresion             | meaning                |          |
+| ----------------------| ---------------------- | -------- |
+| ‘Substitution ${val}’ |‘Substitution’ + val    |          |
+| <type>[ ]             |List<type>              |          |
+| const [1, 2, 3]       |compile-time            |          |
+| = { }                 |new Map<>()             |          |
+
+---
+
+3. Checking types
+
+as, is, !is
+
+4. Chaining method calls
+
+```
+// chaining method call, Equivalent: a.b = true; a.c = 5;
+a..b = true..c = 5;
+```
+
+---
+
+5. Dealing with null
+
+```
+b ??= val; // If b is null, assign the value of val
+a = value ?? 0; // If value is null, set a to 0
+a?.b // a == null ? null : a.b
+```
+
+6. Implementing functions
+```
+fn({bool bold = false, bool hidden = false}) // Named params with default values
+int incr(int a) => a + 1; // Single return statement can be abbreviated.
+```
+
+---
+
+7. Handling exceptions
+```
+try {...}
+on MyException {...}
+catch (e) {...}
+finally {...}
+```
+
+```
+
+```
+
+---
+
+8. Implementing constructors
+```
+Point(this.x, this.y);
+factory Point(int x, int y) => ...;
+// Named constructor
+Point.fromJson(Map json) {
+    x = json['x'];
+    y = json['y'];
+}
+// Delegating constructor
+Point.alongXAxis(num x) : this(x, 0);
+// Const constructor: an object that will never change. All fields have to be final.
+const ImmutablePoint(this.x, this.y);
+// Initializer list 
+Point.fromJson(Map jsonMap)
+      : x = jsonMap['x'], y = jsonMap['y'];
+```
+
+---
+
+Const constructor
+```
+class Person {
+  final String name;
+  final int age;
+  final bool isEmployed;
+  
+  // 변경 불가능하다.
+  const Person(this.name, this.age, {this.isEmployed = false});
+  
+  void printInfo() {
+    print('Name: $name');
+    print('Age: $age');
+    print('Employed: $isEmployed');
+  }
+}
+
+// usage
+const person1 = Person('John', 30, isEmployed: true);
+const person2 = Person('Jane', 25);
+  
+person1.printInfo();
+person2.printInfo();
+```
+
+---
+
+Named constructor
+```
+class Person {
+  final String name;
+  final int age;
+  
+  Person(this.name, this.age);
+  
+  Person.fromBirthYear(String name, int birthYear) : this(name, DateTime.now().year - birthYear);
+  
+  void printInfo() {
+    print('Name: $name');
+    print('Age: $age');
+  }
+}
+
+// usage
+final person1 = Person('John', 30);
+final person2 = Person.fromBirthYear('Jane', 25);
+  
+person1.printInfo();
+person2.printInfo();
+```
+
+---
+
+Delegating constructor
+```
+class Person {
+  final String name;
+  final int age;
+  final bool isEmployed;
+  
+  Person(this.name, this.age, {this.isEmployed = false});
+  
+  // name, age만 받고, isEmployed는 별도로 delegate하여 true로 생성
+  Person.employed(String name, int age) : this(name, age, isEmployed: true);
+  
+  void printInfo() {
+    print('Name: $name');
+    print('Age: $age');
+    print('Employed: $isEmployed');
+  }
+}
+
+// usage
+final person1 = Person('John', 30, isEmployed: true);
+final person2 = Person.employed('Jane', 25);
+  
+person1.printInfo();
+person2.printInfo();
+```
+
+---
+
+#### []Method Cascades](https://news.dartlang.org/2012/02/method-cascades-in-dart-posted-by-gilad.html)
+
+```
+myTokenTable.add("aToken");
+myTokenTable.add("anotherToken");
+// many lines elided here
+// and here 
+// and on and on
+myTokenTable.add("theUmpteenthToken");
+```
+⇨ 중복 코드가 많다
+
+---
+
+```
+myTokenTable.add("aToken");
+            .add("anotherToken");
+            // many lines elided here
+            // and here 
+            // and on and on
+            .add("theUmpteenthToken");
+```
+⇨ 이렇게 사용할 수 있으면 간단할 텐데... receiver를 리턴하지 않으면 할 수 없다.
+
+---
+
+```
+myTokenTable..add("aToken");
+            ..add("anotherToken");
+            // many lines elided here
+            // and here 
+            // and on and on
+            ..add("theUmpteenthToken");
+```
+⇨ 대신 Dart에는 method cascade 기능을 제공한다. ..를 사용하면 receiver를 재사용하는 게 아닌 원래의 데이터를 가져와서 연달아 작성할 수 있게 해준다.
+```
+getAddress()
+  ..setStreet(“Elm”, “13a”)
+  ..city = “Carthage”
+  ..state = “Eurasia”
+  ..zip(66666, extended: 6666);
+```
+그렇기에 위처럼 다양하게 사용할 수 있다.
+
+---
+
 #### Dart의 [Core Library](https://dart.dev/guides/libraries)
 
 - dart:core
