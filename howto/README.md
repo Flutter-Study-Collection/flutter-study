@@ -5,7 +5,7 @@
 여러가지 방법이 있지만, 처음 접하시는 분에겐 Github Desktop이 간단합니다.
 
 1. 다음 이미지와 같이 `< >Code`버튼(초록색)을 누르고, `Open with Github Desktop`을 선택합니다.
-![clone step1](/images/clone-step1.png)
+![clone step1](./images/clone-step1.png)
 (Github Desktop이 없다면, 설치 후, Github 계정으로 로그인을 합니다.) 
 2. Github Desktop 설치 및 로그인 성공이 되었을 경우, `Open with Github Desktop`을 선택하게 되면, Github Desktop에서 clone 프로세스가 진행됩니다.(다운로드 받을 위치 등)
 3. clone이 완료되면 다음과 같이 연결이 되고, `current branch` 부분을 누르게 되면 local 뿐만 아니라 local에 없는 origin의 branch까지 보이게 됩니다.
