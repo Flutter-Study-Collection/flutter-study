@@ -38,7 +38,7 @@ key words
 
 ---
 
-### entry point of dart
+#### entry point of dart
 
 ```
 void main() {
@@ -254,6 +254,7 @@ final square = Shape('square');
 ---
 
 Circle과 Square은 Shape의 하위 클래스이다
+
 ⇨ Shape 타입으로 활용가능하다
 
 ```graphviz
@@ -313,7 +314,8 @@ class CircleMock implements Circle {
 
 #### Function Programming
 
-nameless function(or lamda expression) 
+nameless function
+(= lamda expression, anonymous function) 
 ```
 String scream(int length) => "A${'a' * length}h!";
 ```
@@ -321,12 +323,18 @@ String scream(int length) => "A${'a' * length}h!";
 ```
 // fold(), where(), join(), skip()
 values.map(scream).forEach(print);
-values.skip(1).take(3).map(scream).forEach(print);
+
+values.skip(1)
+      .take(3)
+      .map(scream)
+      .forEach((item){
+          print("$item")
+      });
 ```
 
 ---
 
-### 기본 스타일
+#### 기본 스타일
 - 타입(class, enum 등)의 이름은 [UpperCamelCase](https://dart.dev/guides/language/effective-dart/style#do-name-types-using-uppercamelcase)
 - 상수값은 [lowerCamelCase](https://dart.dev/guides/language/effective-dart/style#prefer-using-lowercamelcase-for-constant-names)
 
@@ -384,15 +392,78 @@ kDefaultTimeout
 
 ---
 
+```
+void main() {
+  String val = "world";
+  String greeting = 'Hello, ${val}!';
+  print(greeting);
+}
+// Hello, world!
+```
+
+```
+void main() {
+  List<int> numbers = <int>[1, 2, 3];
+  print(numbers);
+}
+// [1, 2, 3]
+```
+
+---
+
+```
+void main() {
+  const List<int> numbers = const [1, 2, 3];
+  print(numbers);
+}
+// [1, 2, 3]
+```
+
+```
+void main() {
+  Map<String, int> ages = {'Alice': 30, 'Bob': 25};
+  print(ages);
+}
+
+// {Alice: 30, Bob: 25}
+```
+
+---
+
 3. Checking types
 
-as, is, !is
+| Syntax | Description |
+|--------|-------------|
+| as     | 캐스팅        |
+| is     | 같은 타입 체크  |
+| !is    | 다른 타입 체크  |
+
+```
+void main() {
+  var name = 'Alice';
+
+  print(name is String); // true
+  print(name is int); // false
+  print(name as int); // error: 상위 클래스가 다르면 캐스팅 불가
+}
+```
+
+---
 
 4. Chaining method calls
 
 ```
-// chaining method call, Equivalent: a.b = true; a.c = 5;
+a.b = true;
+a.c = 5;
+```
+같은 변수를 연속 사용할 때, 다음과 같이 사용할 수 있다. 
+```
 a..b = true..c = 5;
+```
+
+```
+a..b = true
+ ..c = 5;
 ```
 
 ---
@@ -405,10 +476,27 @@ a = value ?? 0; // If value is null, set a to 0
 a?.b // a == null ? null : a.b
 ```
 
+---
+
 6. Implementing functions
 ```
-fn({bool bold = false, bool hidden = false}) // Named params with default values
-int incr(int a) => a + 1; // Single return statement can be abbreviated.
+// Named params with default values
+fn({bool bold = false, bool hidden = false}) 
+
+// Single return statement can be abbreviated.
+int incr(int a) => a + 1;
+```
+
+```
+void fn({bool bold = false, bool hidden = false}) {
+  print('Bold: $bold, Hidden: $hidden');
+}
+
+void main() {
+  fn(); // Bold: false, Hidden: false
+  fn(bold: true); // Bold: true, Hidden: false
+  fn(hidden: true, bold: true); // Bold: true, Hidden: true
+}
 ```
 
 ---
@@ -419,10 +507,6 @@ try {...}
 on MyException {...}
 catch (e) {...}
 finally {...}
-```
-
-```
-
 ```
 
 ---
@@ -438,7 +522,8 @@ Point.fromJson(Map json) {
 }
 // Delegating constructor
 Point.alongXAxis(num x) : this(x, 0);
-// Const constructor: an object that will never change. All fields have to be final.
+// Const constructor: an object that will never change.
+// All fields have to be final.
 const ImmutablePoint(this.x, this.y);
 // Initializer list 
 Point.fromJson(Map jsonMap)
@@ -529,7 +614,7 @@ person2.printInfo();
 
 ---
 
-#### []Method Cascades](https://news.dartlang.org/2012/02/method-cascades-in-dart-posted-by-gilad.html)
+#### [Method Cascades](https://news.dartlang.org/2012/02/method-cascades-in-dart-posted-by-gilad.html)
 
 ```
 myTokenTable.add("aToken");
@@ -585,7 +670,31 @@ getAddress()
 
 ---
 
-### [Dart Codelabs](https://dart.dev/codelabs)
+#### [Iterable collections](https://dart.dev/codelabs/iterables)
+
+- List
+- Set
+- Map
+
+---
+
+```graphviz
+digraph hierarchy {
+    nodesep=1 // increases the separation between nodes
+
+    node [color=Black, fontname=Courier,shape=box] //All nodes will this shape and colour
+    edge [color=Black] //All the lines look like this
+    
+    Iterable->{IterableMixin EfficientLengthIterable}
+    EfficientLengthIterable->{Set List Queue}
+    Queue->{ListQueue DoubleLinkedQueue}
+}
+```
+
+
+---
+
+#### [Dart Codelabs](https://dart.dev/codelabs)
 
 - [From Java to Dart](https://developers.google.com/codelabs/from-java-to-dart#0)
 - [Dart Cheatsheet](https://dart.dev/codelabs/dart-cheatsheet)
@@ -594,3 +703,8 @@ getAddress()
 - [Null Safety](https://dart.dev/codelabs/null-safety)
 
 ---
+
+#### 교재
+
+[Dart in Action](https://livebook.manning.com/book/dart-in-action/chapter-8/8)
+[Flutter in Action](https://edu.anarcho-copy.org/Programming%20Languages/Frontend/flutter/Flutter%20in%20Action.pdf)
