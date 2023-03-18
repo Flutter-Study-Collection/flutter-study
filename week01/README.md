@@ -1,3 +1,5 @@
+# 1회차 대주제: Dart 
+
 ### Objective
 
 1. Clean architecture 따라 간단한 app 만들기

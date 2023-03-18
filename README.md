@@ -85,23 +85,15 @@
 - [공공데이터](https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=API&keyword=&detailKeyword=&publicDataPk=&recmSe=&detailText=&relatedKeyword=&commaNotInData=&commaAndData=&commaOrData=&must_not=&tabId=&dataSetCoreTf=&coreDataNm=&sort=inqireCo&relRadio=&orgFullName=&orgFilter=&org=&orgSearch=&currentPage=1&perPage=10&brm=&instt=&svcType=&kwrdArray=&extsn=&coreDataNmArray=&pblonsipScopeCode=)
 
 ### Our Trace
-- [Week1 - ](week1.md)
-- [Week2 - ](week2.md)
-- [Week3 - ](week3.md)
-- [Week4 - ](week4.md)
-- [Week5 - ](week5.md)
-- [Week6 - ](week6.md)
-- [Week7 - ](week7.md)
-- [Week8 - ](week8.md)
-- [Week9 - ](week9.md)
-- [Week10 - ](week10.md)
-- [Week11 - ](week11.md)
-- [Week12 - ](week12.md)
+
+|        회차       |     대주제     |                        목표                          |[참여 내용](/attendance.md)   |
+|------------------|---------------|----------------------------------------------------|----------------------------|
+|[Week00](week00/)|첫 모임          |간단한 자기소개 및 방향 정하기                              | Moon, Sejun                |
+|[Week01](/week01/)|Dart 언어       |Flutter를 입문 전, Dart언어에 대해 이해도를 높인다.          | -                          |
 
 ## 다뤄볼만한 주제:
 
-- 제안자 이름: 내용
-- 제안자 이름: 내용
+- Moon: [유튜브 영상](https://www.youtube.com/watch?v=kj_tldMmu4w)을 따라 모든 위젯 다뤄보기
 
 ## 활동
 
