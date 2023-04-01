@@ -12,6 +12,10 @@ class Bicycle {
   // 중복 생성자를 생성할 수 없어서 .required란 것을 따로 붙여줌.
   Bicycle.required({required this.name, this.cadence = 10, this.gear = 5});
 
+  Bicycle.someOptional(this.name, {this.cadence = 10, this.gear = 5}); // optional 밖에 있다는 거 자체가 필수 파라미터를 의미.
+
+  // Bicycle.outRequired(required this.name, {this.cadence = 10, this.gear = 5}); // Not possible
+
   void applyBrake(int decrement) {
     _speed -= decrement;
   }
@@ -30,6 +34,7 @@ void main() {
   testSpeedVariable(bike);
   testOptionalNamedParameters();
   testRequiredParameters();
+  testSomeOptionalParameters();
 }
 
 // 1. _speed가 variable인지 체크
@@ -61,6 +66,18 @@ void testRequiredParameters(){
   var bike2 = Bicycle.required(cadence: 3, name: 'Hey');
   var bike3 = Bicycle.required(gear: 3, name: 'Yo');
   var bike4 = Bicycle.required(gear: 3, cadence: 5, name: 'Hi');
+  print(bike1.toString());
+  print(bike2.toString());
+  print(bike3.toString());
+  print(bike4.toString());
+}
+
+void testSomeOptionalParameters(){
+  print("# testSomeOptionalParameters");
+  var bike1 = Bicycle.someOptional("John");
+  var bike2 = Bicycle.someOptional("John", cadence: 3, gear: 5);
+  var bike3 = Bicycle.someOptional("John", gear: 3);
+  var bike4 = Bicycle.someOptional("John", gear: 3, cadence: 5);
   print(bike1.toString());
   print(bike2.toString());
   print(bike3.toString());
