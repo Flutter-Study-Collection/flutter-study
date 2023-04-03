@@ -1,0 +1,35 @@
+name: Send PRs to Slack
+on:
+  schedule:
+    # Schedule this workflow to run every weekday at 9:00 AM
+    - cron: '41 11 * * 1-5'
+jobs:
+  send-to-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install @slack/web-api
+      - name: Get PRs
+        id: prs
+        uses: peter-evans/find-pull-requests@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          author: ${{ github.actor }}
+          state: open
+      - name: Send messages to Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,headBranch,baseBranch,createdBy,created
+          title: 'Unmerged PRs'
+          text: 'Here are the unmerged PRs:'
+          color: warning
+          author_name: 'GitHub Actions'
+          author_icon: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
+          author_link: 'https://github.com/features/actions'
+          channel: '#general'
+          token: ${{ secrets.SLACK_TOKEN }}
+          attachments: ${{ toJson(fromJson(steps.prs.outputs.prs)) }}
+
