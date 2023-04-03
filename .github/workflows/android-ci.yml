@@ -13,10 +13,11 @@ jobs:
         run: npm install @slack/web-api
       - name: Get PRs
         id: prs
-        uses: peter-evans/find-pull-requests@v1
+        uses: octokit/request-action@v2.x
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          author: ${{ github.actor }}
+          route: GET /repos/{owner}/{repo}/pulls
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
           state: open
       - name: Send messages to Slack
         uses: 8398a7/action-slack@v3
