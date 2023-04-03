@@ -2,7 +2,7 @@ name: Send PRs to Slack
 on:
   schedule:
     # Schedule this workflow to run every weekday at 9:00 AM
-    - cron: '41 11 * * 1-5'
+    - cron: '46 11 * * 1-5'
 jobs:
   send-to-slack:
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
           author_name: 'GitHub Actions'
           author_icon: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
           author_link: 'https://github.com/features/actions'
-          channel: '#general'
+          channel: '#github'
           token: ${{ secrets.SLACK_TOKEN }}
           attachments: ${{ toJson(fromJson(steps.prs.outputs.prs)) }}
 
