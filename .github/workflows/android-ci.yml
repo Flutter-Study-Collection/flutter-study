@@ -2,7 +2,7 @@ name: Send PRs to Slack
 on:
   schedule:
     # Schedule this workflow to run every weekday at 9:00 AM
-    - cron: '49 11 * * 1-5'
+    - cron: '* * * * 1-5'
 jobs:
   send-to-slack:
     runs-on: ubuntu-latest
