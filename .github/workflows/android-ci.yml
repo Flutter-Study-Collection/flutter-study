@@ -19,6 +19,8 @@ jobs:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
           state: open
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Send messages to Slack
         uses: 8398a7/action-slack@v3
         with:
