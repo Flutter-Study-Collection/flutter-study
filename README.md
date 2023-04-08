@@ -12,6 +12,7 @@
 |~~Park~~|~~munchk8150@gmail.com~~|~~플러터 제가 한번 해보겠습니다 !~~|2023.3.1|2023.3.18|
 |Sejun|qpfjf56@gmail.com|많이 배우고 가겠습니다! |2023.3.1|-|
 |Winkberry|diestina91@gmail.com|플러터 열심히 배우겠습니다|2023.4.8|-|
+|Wepol|episode0611@gmail.com|왕초보라 잘 부탁드립니다.|2023.4.8|-|
 
 ## Rule
 
