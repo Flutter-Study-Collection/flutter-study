@@ -10,7 +10,7 @@
 |KimNa|skgus43@gmail.com|느슨해진 스터디에 긴장감을 줘~ 많이 배워가겠습니다.|2023.3.1|-|
 |Moon|tmdeoans@snu.ac.kr|플러터 고수가 되는 그날까지! 열심히 하겠습니다|2023.3.1|-|
 |~~Park~~|~~munchk8150@gmail.com~~|~~플러터 제가 한번 해보겠습니다 !~~|2023.3.1|2023.3.18|
-|Sejun|qpfjf56@gmail.com|많이 배우고 가겠습니다! |2023.3.1|-|
+|Sejun|qpfjf56@gmail.com|많이 배우고 가겠습니다! |2023.3.1|2023.4.15|
 |Winkberry|diestina91@gmail.com|플러터 열심히 배우겠습니다|2023.4.8|-|
 |Wepol|episode0611@gmail.com|왕초보라 잘 부탁드립니다.|2023.4.8|-|
 
@@ -90,12 +90,13 @@
 
 ### Our Trace
 
-|        회차       |         대주제        |                        목표                           |[참여 내용](/attendance.md)   |
-|------------------|---------------------|------------------------------------------------------|----------------------------|
-|[Week00](/week00/)|첫 모임                |간단한 자기소개 및 방향 정하기                               | Moon, Sejun                |
-|[Week01](/week01/)|Dart 언어             |Flutter를 입문 전, Dart언어에 대해 이해도를 높인다.            | All                        |
-|[Week02](/week02/)|Widget               |Flutter를 입문 첫 단계. Widget에 대해서 알아본다.             | Chan, Moon, KimNa          |
-|[Week03](/week03/)|Widget+Architecture  |Dart와 Widget 등을 사용하여 기본적인 프로젝트 구성에 대해 알아본다. | -                          |
+|        회차       |         대주제        |                        목표                           |[참여 내용](/attendance.md)       |
+|------------------|---------------------|------------------------------------------------------|--------------------------------|
+|[Week00](/week00/)|첫 모임                |간단한 자기소개 및 방향 정하기                               | Moon, Sejun                    |
+|[Week01](/week01/)|Dart 언어             |Flutter를 입문 전, Dart언어에 대해 이해도를 높인다.            | All                            |
+|[Week02](/week02/)|Widget               |Flutter를 입문 첫 단계. Widget에 대해서 알아본다.             | Chan, Moon, KimNa              |
+|[Week03](/week03/)|Widget+Architecture  |Dart와 Widget 등을 사용하여 기본적인 프로젝트 구성에 대해 알아본다. | Chan, KimNa, Winkberry, Wepol |
+|[Week04](/week04/)|상태관리               |상태관리에 대한 이해와 여러가지 상태관리 방법에 대해 알아본다.        | -                             |
 
 ## 다뤄볼만한 주제:
 
