@@ -1,0 +1,38 @@
+name: Send PRs to Slack
+on:
+  schedule:
+    # Schedule this workflow to run every weekday at 9:00 AM
+    - cron: '* * * * 1-5'
+jobs:
+  send-to-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install @slack/web-api
+      - name: Get PRs
+        id: prs
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/{owner}/{repo}/pulls
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          state: open
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Send messages to Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,pullRequest
+          custom_payload: |
+            {
+              attachments: [{
+              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+              text: `Unmerged Pull Requests in ${process.env.AS_REPO}:\n${{ steps.prs.outputs.data }}`,
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
