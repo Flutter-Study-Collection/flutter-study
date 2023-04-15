@@ -2,9 +2,9 @@
 
 # Architectural layers
 
-![Architectural layers](../images/archdiagram.png)
+![Architectural layers](./images/archdiagram.png)
 
 # Anatomy of an app
 
-![Anatomy of an app](../images/app-anatomy.svg)
+![Anatomy of an app](./images/app-anatomy.svg)
 
