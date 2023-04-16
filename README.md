@@ -73,7 +73,7 @@
 
 ### Hands-on
 
-- [Google Codelabs](codelabs.md)
+- [Google Codelabs](https://codelabs.developers.google.com/?cat=Flutter&product=flutter)
 
 ### 발표 자료
 
