@@ -34,16 +34,27 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+  # provider
   provider: ^6.0.5
+
+  # bloc
   flutter_bloc: ^7.3.0
 
-  mobx: ^2.0.6
-  flutter_mobx: ^2.0.2
+  # mobx
+  mobx: ^2.1.3
+  flutter_mobx: ^2.0.6+5
+
+  # getx
+  get: ^4.6.5
 
 dev_dependencies:
   # flutter_test is built on top of package:test (We don't need test package)
   flutter_test:
     sdk: flutter
+
+  build_runner: ^2.3.3
+  mobx_codegen: ^2.1.1
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
