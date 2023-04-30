@@ -8,7 +8,7 @@
 |-----|---|--------|-----|----|
 |Chan|chanjungskim@gmail.com|꾸준히 잘 유지되고, 같이 성장할 수 있는 스터디가 되었으면 좋겠습니다.|2023.3.1|-|
 |KimNa|skgus43@gmail.com|느슨해진 스터디에 긴장감을 줘~ 많이 배워가겠습니다.|2023.3.1|-|
-|Moon|tmdeoans@snu.ac.kr|플러터 고수가 되는 그날까지! 열심히 하겠습니다|2023.3.1|-|
+|~~Moon~~|~~tmdeoans@snu.ac.kr~~|~~플러터 고수가 되는 그날까지! 열심히 하겠습니다~~|2023.3.1|2023.4.30|
 |~~Park~~|~~munchk8150@gmail.com~~|~~플러터 제가 한번 해보겠습니다 !~~|2023.3.1|2023.3.18|
 |~~Sejun~~|~~qpfjf56@gmail.com~~|~~많이 배우고 가겠습니다!~~|2023.3.1|2023.4.15|
 |Winkberry|diestina91@gmail.com|플러터 열심히 배우겠습니다|2023.4.8|-|
@@ -96,7 +96,8 @@
 |[Week01](/week01/)|Dart 언어             |Flutter를 입문 전, Dart언어에 대해 이해도를 높인다.            | All                            |
 |[Week02](/week02/)|Widget               |Flutter를 입문 첫 단계. Widget에 대해서 알아본다.             | Chan, Moon, KimNa              |
 |[Week03](/week03/)|Widget+Architecture  |Dart와 Widget 등을 사용하여 기본적인 프로젝트 구성에 대해 알아본다. | Chan, KimNa, Winkberry, Wepol |
-|[Week04](/week04/)|상태관리               |상태관리에 대한 이해와 여러가지 상태관리 방법에 대해 알아본다.        | -                             |
+|[Week04](/week04/)|상태관리               |상태관리에 대한 이해와 여러가지 상태관리 방법에 대해 알아본다.        | Chan, Wepol                   |
+|[Week05](/week05/)|네비게이션과 상태관리      |화면 이동을 하는 방법에 대해 알아보고, 여러 화면에서의 상태관리 방법에 대해 알아본다. | -                  |
 
 ## 다뤄볼만한 주제:
 
