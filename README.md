@@ -19,6 +19,7 @@
 |~~Sejun~~|~~qpfjf56@gmail.com~~|~~많이 배우고 가겠습니다!~~|2023.3.1|2023.4.15|
 |Winkberry|diestina91@gmail.com|플러터 열심히 배우겠습니다|2023.4.8|-|
 |Wepol|episode0611@gmail.com|왕초보라 잘 부탁드립니다.|2023.4.8|-|
+|chi|dti.ctusits@gmail.com|플러터로 실제 앱 런칭까지 목표입니다 화이팅! |2023.5.4|-|
 
 ## Rule
 
