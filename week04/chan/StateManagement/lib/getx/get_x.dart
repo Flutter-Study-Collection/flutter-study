@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(const CounterApp());
+  runApp(CounterApp());
 }
 
 class CounterController extends GetxController {
