@@ -42,9 +42,7 @@ class CounterScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          context.read<CounterModel>().incrementCounter();
-        },
+        onPressed: () => context.read<CounterModel>().incrementCounter(),
         child: Icon(Icons.add),
       ),
     );

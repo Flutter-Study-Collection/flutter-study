@@ -1,4 +1,4 @@
-name: widget
+name: navigation
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -31,31 +31,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-
-  # provider
-  provider: ^6.0.5
-
-  # bloc
-  flutter_bloc: ^7.3.0
-
-  # mobx
-  mobx:
-  flutter_mobx:
-
-  # getx
-  get: ^4.6.5
+  flutter_riverpod: ^2.3.6
 
 dev_dependencies:
-  # flutter_test is built on top of package:test (We don't need test package)
   flutter_test:
     sdk: flutter
-
-  # mobx
-  build_runner:
-  mobx_codegen:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
