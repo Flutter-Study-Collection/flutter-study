@@ -60,20 +60,17 @@
 
 ## 다룰 소스들
 
-- [이름](링크)
+- [Flutter Samples](https://flutter.github.io/samples/#)
 
 #### Dart
 
 - 교재: 
 - 관련 링크: 
 
-#### Architecture
+#### Flutter
 
-- 교재:
-
-#### Performance
-
-- 자료: 
+- [Cookbook](https://docs.flutter.dev/cookbook)
+- [Architecture](https://docs.flutter.dev/resources/architectural-overview)
 
 #### 구글 블로그 등등
 
@@ -82,14 +79,17 @@
 ### Hands-on
 
 - [Google Codelabs](https://codelabs.developers.google.com/?cat=Flutter&product=flutter)
-
+- [Tutorials](https://docs.flutter.dev/reference/tutorials)
+- 
 ### 발표 자료
 
 - 
 
 ### 기타 역량
 
-- 
+- [Testing](https://docs.flutter.dev/testing)
+- [Integration Testing](https://docs.flutter.dev/testing/integration-tests)
+- [Performance](https://docs.flutter.dev/perf)
 
 ### Open API
 
@@ -109,7 +109,8 @@
 
 ## 다뤄볼만한 주제:
 
-- Moon: [유튜브 영상](https://www.youtube.com/watch?v=kj_tldMmu4w)을 따라 모든 위젯 다뤄보기
+- [위젯 모음 유튜브 영상](https://www.youtube.com/watch?v=kj_tldMmu4w)을 따라 모든 위젯 다뤄보기
+- [add-to-app으로 네이티브 프로젝트에 플러터 넣기](https://docs.flutter.dev/add-to-app)
 
 ## 활동
 
