@@ -1,32 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:navigation/navigation/state/provider.dart';
 
-import '../riverpod/provider.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends ConsumerWidget {
+class ScreenA extends ConsumerWidget {
   var title;
 
-  MyHomePage({super.key, required this.title});
+  ScreenA({super.key, required this.title});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -52,7 +31,10 @@ class MyHomePage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
-          ref.read(counterProvider.notifier).increment()
+          if(counter == 10)
+            Navigator.pushNamed(context, '/b')
+          else
+            ref.read(counterProvider.notifier).increment()
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
