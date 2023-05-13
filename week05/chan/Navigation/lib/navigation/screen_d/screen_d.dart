@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:navigation/navigation/state/provider.dart';
 
-class ScreenB extends ConsumerWidget {
+class ScreenD extends ConsumerWidget {
   var title;
 
-  ScreenB({super.key, required this.title});
+  ScreenD({super.key, required this.title});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -37,7 +37,7 @@ class ScreenB extends ConsumerWidget {
             FloatingActionButton(
               heroTag: UniqueKey(),
               onPressed: () => {
-                if(counter == 0)
+                if(counter == 30)
                   Navigator.pop(context)
                 else
                   ref.read(counterProvider.notifier).decrement()
@@ -48,8 +48,8 @@ class ScreenB extends ConsumerWidget {
             FloatingActionButton(
               heroTag: UniqueKey(),
               onPressed: () => {
-                if(counter == 20)
-                  Navigator.pushNamed(context, '/c')
+                if(counter == 40)
+                  Navigator.pushNamed(context, '/e')
                 else
                   ref.read(counterProvider.notifier).increment()
               },

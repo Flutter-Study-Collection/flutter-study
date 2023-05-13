@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:navigation/navigation/screen_b/screen_b.dart';
 import 'package:navigation/navigation/state/provider.dart';
 
 class ScreenA extends ConsumerWidget {
@@ -32,7 +33,10 @@ class ScreenA extends ConsumerWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
           if(counter == 10)
-            Navigator.pushNamed(context, '/b')
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ScreenB(title: "This is ScreenB with push()",)),
+            )
           else
             ref.read(counterProvider.notifier).increment()
         },
