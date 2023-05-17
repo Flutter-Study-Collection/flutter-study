@@ -1,7 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
+  getHttp();
+  postHttp();
+}
+
+void getHttp() async {
+  try {
+    final response = await http.get(Uri.parse('https://script.google.com/macros/s/AKfycbwGA-xVvp-T2P2lnQUZYAzebSBmimR9CFsg3iOyRwCNzgclnh4sk9nt7QgfCbjI6ihe/exec'));
+    print(response.statusCode);
+    print(response.body);
+  } catch (e) {
+    print(e);
+  }
+}
+
+void postHttp() async {
+  var client = http.Client();
+
+  try {
+    final response = await client.post(
+        Uri.parse('https://script.google.com/macros/s/AKfycbwGA-xVvp-T2P2lnQUZYAzebSBmimR9CFsg3iOyRwCNzgclnh4sk9nt7QgfCbjI6ihe/exec'),
+        body: {'created': 'doodle', 'date': 'blue', 'title': 'hello', 'done': 'true'}
+    );
+    print(response.statusCode);
+    print(response.body);
+  } catch (e) {
+    print(e);
+  }
 }
 
 class MyApp extends StatelessWidget {
