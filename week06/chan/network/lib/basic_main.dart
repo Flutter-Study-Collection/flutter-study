@@ -3,32 +3,35 @@ import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
-  getHttp();
-  postHttp();
+  getMethod();
+  postMethod();
 }
 
-void getHttp() async {
+void getMethod() async {
+  print("getMethod");
   try {
     final response = await http.get(Uri.parse('https://script.google.com/macros/s/AKfycbwGA-xVvp-T2P2lnQUZYAzebSBmimR9CFsg3iOyRwCNzgclnh4sk9nt7QgfCbjI6ihe/exec'));
-    print(response.statusCode);
-    print(response.body);
+    print("${response.statusCode}: ${response.body}");
   } catch (e) {
     print(e);
   }
 }
 
-void postHttp() async {
-  var client = http.Client();
-
+void postMethod() async {
+  print("postMethod");
   try {
-    final response = await client.post(
-        Uri.parse('https://script.google.com/macros/s/AKfycbwGA-xVvp-T2P2lnQUZYAzebSBmimR9CFsg3iOyRwCNzgclnh4sk9nt7QgfCbjI6ihe/exec'),
-        body: {'created': 'doodle', 'date': 'blue', 'title': 'hello', 'done': 'true'}
+    final response = await http.post(
+        Uri.parse('https://script.google.com/macros/s/AKfycby4QJ4-nVVcw4zgqVUCV8XrWAB3EljJzh__bjvMASCg6QEBWOn17KOHnuiTMkoeu5sJ/exec'),
+        body: {
+          "created": "22551253",
+          "date": "12551231",
+          "title": "a222",
+          "done": "true"
+        }
     );
-    print(response.statusCode);
-    print(response.body);
+    print("${response.statusCode}: ${response.body}");
   } catch (e) {
-    print(e);
+    print(e.toString());
   }
 }
 
