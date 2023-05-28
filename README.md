@@ -20,7 +20,7 @@
 |~~Winkberry~~|~~diestina91@gmail.com~~|~~플러터 열심히 배우겠습니다~~|2023.4.8|2023.5.14|[보기](https://github.com/Flutter-Study-Collection/flutter-study/commit/28c38883e0dee465f3130986d941a35f5531dbae)|2회 연속 불참, 미응답|
 |Wepol|episode0611@gmail.com|왕초보라 잘 부탁드립니다.|2023.4.8|-|-|-|
 |chi|dti.ctusits@gmail.com|플러터로 실제 앱 런칭까지 목표입니다 화이팅! |2023.5.4|-|-|-|
-|~~johnkim7430~~|~~astorage9909@gmail.com~~|~~양산형 플러터 1인 개발자가 되는 것이 목표입니다.~~|2023.5.11|-|-|미응답|
+|~~johnkim7430~~|~~astorage9909@gmail.com~~|~~양산형 플러터 1인 개발자가 되는 것이 목표입니다.~~|2023.5.11|2023.5.28|미참여|미응답|
 
 ## Rule
 
