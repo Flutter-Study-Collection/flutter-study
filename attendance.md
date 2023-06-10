@@ -11,5 +11,5 @@
 |Week04| O/O/O | X/O/△ | -         | -     |
 |Week05| O/O/X | X     | -         | -     |
 |Week06| O/O/O | X/O/O | X/O/O     | -     |
-|Week07| -     | -     | -         | -     |
+|Week07| O/O/O | O/O/O | X/O/O     | -     |
 |Week08| -     | -     | -         | -     |
