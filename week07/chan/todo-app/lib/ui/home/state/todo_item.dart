@@ -1,7 +1,10 @@
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ToDoItem extends StateNotifier<int> {
-  ToDoItem() : super(0);
-  void increment() => state++;
-}
+final todoServiceProvider = Provider<ToDoService>((ref) => TodoServiceImplementation());
+
+// TodoList FutureProvider
+final todoListProvider = FutureProvider<List<Todo>>((ref) async {
+  final todoService = ref.watch(todoServiceProvider);
+  return todoService.fetchTodoList();
+});
