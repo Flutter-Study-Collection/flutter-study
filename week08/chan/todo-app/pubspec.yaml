@@ -1,4 +1,4 @@
-name: network
+name: todo_app
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -36,11 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   #state
-  flutter_riverpod: ^2.3.6
+  flutter_riverpod:
 
   #network
   http:
-  dio: ^4.0.0
+  dio:
 
   #di
   get_it:

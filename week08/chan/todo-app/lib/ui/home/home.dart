@@ -1,31 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../model/todo_item_data.dart';
-import '../../service/todo_service.dart';
+import 'provider.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
+class MyHomePage extends ConsumerWidget {
+  const MyHomePage({Key? key}) : super(key: key);
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final todoViewModel = ref.watch(todoViewModelProvider);
 
-class _MyHomePageState extends State<MyHomePage> {
-  late Future<List<Todo>> futureTodoList;
-
-  @override
-  void initState() {
-    super.initState();
-    futureTodoList = GetIt.instance<ToDoService>().fetchTodoList();
-  }
-  
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: FutureBuilder<List<Todo>>(
-          future: futureTodoList,
+          future: todoViewModel.todoList,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return CircularProgressIndicator();
