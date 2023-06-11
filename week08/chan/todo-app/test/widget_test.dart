@@ -1,30 +1,51 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
+import 'package:todo_app/service/todo_service.dart';
 
-import 'package:network/basic_main.dart';
+import 'mock_dio.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  group('TodoServiceImplementation', () {
+    late Dio mockDio;
+    late TodoServiceImplementation service;
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    setUp(() {
+      mockDio = MockDio();
+      service = TodoServiceImplementation(dio: mockDio);
+    });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    test('fetchTodoList returns list of Todo', () async {
+      final mockResponse = [
+        {
+          'created': 1634000000,
+          'date': 1634000000,
+          'title': 'Mock todo',
+          'done': false,
+        },
+        {
+          'created': 1634000000,
+          'date': 1634000000,
+          'title': 'Another mock todo',
+          'done': true,
+        },
+      ];
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+      when(mockDio.get('https://script.google.com/macros/s/AKfycbzUqU2O5fJp6orBq2PLk7wNKFEzpKy3w4gi5c_legsmjILh9hyoc8mONsSf9i6pnJF_/exec')).thenAnswer(
+            (_) async => Response(
+          requestOptions: RequestOptions(path: 'https://script.google.com/macros/s/AKfycbzUqU2O5fJp6orBq2PLk7wNKFEzpKy3w4gi5c_legsmjILh9hyoc8mONsSf9i6pnJF_/exec'),
+          data: mockResponse,
+        ),
+      );
+
+      final result = await service.fetchTodoList();
+
+      expect(result.length, 2);
+      expect(result[0].title, 'Mock todo');
+      expect(result[0].done, false);
+      expect(result[1].title, 'Another mock todo');
+      expect(result[1].done, true);
+    });
   });
 }
