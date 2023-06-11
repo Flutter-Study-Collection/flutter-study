@@ -5,6 +5,7 @@ permissions:
   pull-requests: write
 
 on:
+  push:
   pull_request:
     types: [opened, reopened, synchronize]
 
