@@ -1,0 +1,27 @@
+name: Code Review
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  push:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  test:
+    # if: ${{ contains(github.event.*.labels.*.name, 'gpt review') }} # Optional; to run only when a label is attached
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anc95/ChatGPT-CodeReview@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # Optional
+          LANGUAGE: Korean
+          OPENAI_API_ENDPOINT: https://api.openai.com/v1
+          MODEL:
+          PROMPT: "Google 시니어 개발자처럼 이 코드를 꼼꼼히 분석하고, 개선사항이나 버그가 있다면 지적해주세요. 이해하지 못하는 부분은 질문하고, 추가로 공부할 수 있는 레퍼런스나 키워드도 제공해주세요."
+          top_p: 1
+          temperature: 1

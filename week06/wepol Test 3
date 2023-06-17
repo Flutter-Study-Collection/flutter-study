@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:getx001/src/first_nomal/first.dart';
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("라우트관리 홈"),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            RaisedButton(
+              child: Text("일반적인 라우트"),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => FirstPage(),
+                ));
+
+                //Get.to(FirstPage());
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+RaisedButton({required Text child, required Null Function() onPressed}) {}
+
+class Button {}
