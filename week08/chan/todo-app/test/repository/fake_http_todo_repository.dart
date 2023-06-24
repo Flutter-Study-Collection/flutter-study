@@ -3,15 +3,15 @@ import 'package:todo_app/model/todo_item_data.dart';
 import 'package:todo_app/repository/todo_repository.dart';
 
 // 테스트를 할 땐, FakeTodoRepository를 사용하고, 실제 서버와 통신을 할 땐 HttpTodoRepository를 사용합니다.
-class FakeTodoRepository implements TodoRepository {
+class FakeHttpTodoRepository implements TodoRepository {
+  static List<Todo> fakeTodos = [Todo(created: 123456789, date: 123456789, title: 'Test Todo', done: false)];
+
   @override
   Future<List<Todo>> fetchTodoList() {
     // 실제 네트워크 통신을 하지 않고 로컬에서 가짜 데이터를 반환합니다.
     // 이렇게하면 테스트 시 로컬에서 빠르게 테스트를 진행할 수 있습니다.
     // 단, 실제 서버와 통신을 하지 않기 때문에 서버와의 통신이 정상적으로 되는지는 테스트할 수 없습니다.
     // 이는 테스트의 목적이 앱 자체를 테스트하기 위한 것이고, 외부 환경이 동적으로 변화해서는 안되기 떄문에 로컬에서만 테스트를 진행하는 것이 좋습니다
-    return Future.value([
-      Todo(created: 123456789, date: 123456789, title: 'Test Todo', done: false),
-    ]);
+    return Future.value(fakeTodos);
   }
 }

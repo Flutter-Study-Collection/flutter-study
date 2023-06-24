@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:todo_app/service/todo_service.dart';
 
-import 'mock_dio.dart';
+import 'mock/mock_dio.dart';
 
 void main() {
   group('TodoServiceImplementation', () {

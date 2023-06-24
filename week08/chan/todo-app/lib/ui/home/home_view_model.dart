@@ -15,4 +15,8 @@ class TodoViewModel extends ChangeNotifier {
     todoList = _todoRepository.fetchTodoList();
     notifyListeners();
   }
+
+  void updateTodo(copy) {
+
+  }
 }
