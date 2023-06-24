@@ -13,10 +13,10 @@ final dioProvider = Provider((ref) => Dio());
 final todoServiceProvider = Provider((ref) => TodoServiceImplementation(dio: ref.read(dioProvider)));
 
 // todoRepository를 주입합니다. HttpTodoRepository는 TodoRepository를 상속받았기 때문에 타입이 다를 수 있습니다.
-// 이는 추후에 FakeTodoRepository를 만들어서 테스트를 진행할 때 유연하게 사용될 수 있습니다.
+// 이는 추후에 FakeHttpTodoRepository를 만들어서 테스트를 진행할 때 유연하게 사용될 수 있습니다.
 final todoRepositoryProvider = Provider<TodoRepository>((ref) {
   final todoService = ref.watch(todoServiceProvider);
-  return HttpTodoRepository(todoService);
+  return HttpTodoRepositoryImpl(todoService);
 });
 
 // todoViewModel을 주입합니다.
