@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:todo_app/ui/home/home_view_model.dart';
 
-import 'repository/fake_todo_repository.dart';
+import 'repository/fake_http_todo_repository.dart';
 
 void main() {
   test('TodoViewModel fetches todo list', () async {
