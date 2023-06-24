@@ -1,3 +1,4 @@
-# network
+# app architecture and testing
 
-- [http package](https://pub.dev/packages/http)
+- [Automating Tests for Flutter Apps - Test Automation University](https://testautomationu.applitools.com/testing-flutter-apps)
+- [Clean Architecture](https://dev.to/leehack/journey-to-the-clean-architecture-for-my-flutter-app-138n)
