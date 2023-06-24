@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/repository/todo_repository.dart';
 
 import '../../model/todo_item_data.dart';
-import '../../service/todo_service.dart';
 
 class TodoViewModel extends ChangeNotifier {
-  final ToDoService _todoService;
+  final TodoRepository _todoRepository;
   late Future<List<Todo>> todoList;
 
-  TodoViewModel(this._todoService) {
+  TodoViewModel(this._todoRepository){
     fetchTodos();
   }
 
-  fetchTodos() {
-    todoList = _todoService.fetchTodoList();
+  Future<void> fetchTodos() async {
+    todoList = _todoRepository.fetchTodoList();
     notifyListeners();
   }
 }

@@ -42,9 +42,6 @@ dependencies:
   http:
   dio:
 
-  #di
-  get_it:
-
   intl:
 
 dev_dependencies:
