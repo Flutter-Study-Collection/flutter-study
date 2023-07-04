@@ -1,10 +1,11 @@
 
+import 'package:todo_app/model/todo_item.dart';
 import 'package:todo_app/model/todo_response.dart';
 import 'package:todo_app/repository/todo_repository.dart';
 
 // 테스트를 할 땐, FakeTodoRepository를 사용하고, 실제 서버와 통신을 할 땐 HttpTodoRepository를 사용합니다.
 class FakeHttpTodoRepository implements TodoRepository {
-  static List<TodoResponse> fakeTodos = [TodoResponse(created: 123456789, date: 123456789, title: 'Test Todo', done: false)];
+  static List<TodoResponse> fakeTodos = [Todo(created: 123456789, date: 123456789, title: 'Test Todo', done: false)];
 
   @override
   Future<List<TodoResponse>> fetchTodoList() {
