@@ -52,7 +52,7 @@ class ToDoServiceImpl implements ToDoService {
   @override
   Future<Result<List<Todo>>> updateTodoItem(Todo item) {
     return handleRequest(
-          () =>  _dio.post('$_baseUrl/$_key/exec/update/${item.created}?title=${item.title}&date=${item.date}&done=${item.done}'),
+          () =>  _dio.post('$_baseUrl/$_key '),
           (data) => (data as List).map<Todo>((json) => Todo.fromJson(json)).toList(),
     );
   }
