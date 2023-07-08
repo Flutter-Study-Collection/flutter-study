@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../common/network_constant.dart';
 import '../repository/todo_repository.dart';
 import '../repository/todo_repository_impl.dart';
 import '../service/todo_service.dart';
@@ -10,7 +11,8 @@ import '../ui/home/home_view_model.dart';
 final dioProvider = Provider((ref) => Dio());
 
 // todoService를 주입합니다.
-final todoServiceProvider = Provider((ref) => TodoServiceImplementation(dio: ref.read(dioProvider)));
+final todoServiceProvider = Provider((ref) => ToDoServiceImpl(
+    dio: ref.read(dioProvider), baseUrl: NetworkConstant.baseUrl));
 
 // todoRepository를 주입합니다. HttpTodoRepository는 TodoRepository를 상속받았기 때문에 타입이 다를 수 있습니다.
 // 이는 추후에 FakeHttpTodoRepository를 만들어서 테스트를 진행할 때 유연하게 사용될 수 있습니다.

@@ -9,6 +9,7 @@ class MockDio extends Mock implements Dio {
         Options? options,
         CancelToken? cancelToken,
         ProgressCallback? onReceiveProgress,
+        Object? data,
       }) async {
     return super.noSuchMethod(
       Invocation.method(

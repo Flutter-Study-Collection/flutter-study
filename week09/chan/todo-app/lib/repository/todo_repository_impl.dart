@@ -1,7 +1,9 @@
 import 'package:todo_app/repository/todo_repository.dart';
 
-import '../../model/todo_item_data.dart';
+import '../../model/todo_response.dart';
 import '../../service/todo_service.dart';
+import '../model/result.dart';
+import '../model/todo_item.dart';
 
 class HttpTodoRepositoryImpl extends TodoRepository {
   final ToDoService _todoService;
@@ -9,7 +11,22 @@ class HttpTodoRepositoryImpl extends TodoRepository {
   HttpTodoRepositoryImpl(this._todoService);
 
   @override
-  Future<List<Todo>> fetchTodoList() {
+  Future<Result<List<Todo>>> fetchTodoList() {
     return _todoService.fetchTodoList();
+  }
+
+  @override
+  Future<Result<List<Todo>>> addTodo(Todo item) {
+    return _todoService.addTodoItem(item);
+  }
+
+  @override
+  Future<Result<List<Todo>>> removeTodo(Todo item) {
+    return _todoService.removeTodoItem(item);
+  }
+
+  @override
+  Future<Result<List<Todo>>> updateTodo(Todo item) {
+    return _todoService.updateTodoItem(item);
   }
 }

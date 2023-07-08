@@ -44,6 +44,8 @@ dependencies:
 
   intl:
 
+  logging:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
