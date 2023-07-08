@@ -13,4 +13,4 @@
 |Week06| O/O/O | X/O/O | X/O/O     | -     |
 |Week07| O/O/O | O/O/O | X/O/O     | -     |
 |Week08| O/O/O | O/O/O | X/O/O     | -     |
-|Week09| -     | -     | -         | -     |
+|Week09| O/O/O | X/O/O | X/O/O     | -     |
