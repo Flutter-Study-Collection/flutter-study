@@ -1,7 +1,7 @@
-
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:todo_app/common/network_constant.dart';
 import 'package:todo_app/service/todo_service.dart';
 
 import 'mock/mock_dio.dart';
@@ -9,11 +9,11 @@ import 'mock/mock_dio.dart';
 void main() {
   group('TodoServiceImplementation', () {
     late Dio mockDio;
-    late TodoServiceImplementation service;
+    late ToDoServiceImpl service;
 
     setUp(() {
       mockDio = MockDio();
-      service = TodoServiceImplementation(dio: mockDio);
+      service = ToDoServiceImpl(dio: mockDio, baseUrl: NetworkConstant.baseUrl);
     });
 
     test('fetchTodoList returns list of Todo', () async {
@@ -32,20 +32,28 @@ void main() {
         },
       ];
 
-      when(mockDio.get('https://script.google.com/macros/s/AKfycbzUqU2O5fJp6orBq2PLk7wNKFEzpKy3w4gi5c_legsmjILh9hyoc8mONsSf9i6pnJF_/exec')).thenAnswer(
-            (_) async => Response(
-          requestOptions: RequestOptions(path: 'https://script.google.com/macros/s/AKfycbzUqU2O5fJp6orBq2PLk7wNKFEzpKy3w4gi5c_legsmjILh9hyoc8mONsSf9i6pnJF_/exec'),
+      when(mockDio.get(
+              'https://script.google.com/macros/s/AKfycbzUqU2O5fJp6orBq2PLk7wNKFEzpKy3w4gi5c_legsmjILh9hyoc8mONsSf9i6pnJF_/exec'))
+          .thenAnswer(
+        (_) async => Response(
+          requestOptions: RequestOptions(
+              path:
+                  'https://script.google.com/macros/s/AKfycbzUqU2O5fJp6orBq2PLk7wNKFEzpKy3w4gi5c_legsmjILh9hyoc8mONsSf9i6pnJF_/exec'),
           data: mockResponse,
         ),
       );
 
       final result = await service.fetchTodoList();
-
-      expect(result.length, 2);
-      expect(result[0].title, 'Mock todo');
-      expect(result[0].done, false);
-      expect(result[1].title, 'Another mock todo');
-      expect(result[1].done, true);
+      if (result.isSuccess) {
+        var data = result.data;
+        expect(1, 2);
+        expect(data![0].title, 'Mock todo');
+        expect(data[0].done, false);
+        expect(data[1].title, 'Another mock todo');
+        expect(data[1].done, true);
+      } else {
+        fail('Should not have failed');
+      }
     });
   });
 }

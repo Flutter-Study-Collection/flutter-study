@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../model/todo_item_data.dart';
 import '../../di/module.dart';
+import '../../model/result.dart';
+import '../../model/todo_item.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,15 +15,15 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
       body: Center(
-        child: FutureBuilder<List<Todo>>(
-          future: todoViewModel.todoList,
+        child: StreamBuilder<Result<List<Todo>>>(
+          stream: todoViewModel.todoListStream,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             } else if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             } else {
-              final todos = snapshot.data!;
+              final todos = snapshot.data!.data!;
               return ListView.builder(
                 itemCount: todos.length,
                 itemBuilder: (context, index) {
@@ -37,7 +38,7 @@ class HomeScreen extends ConsumerWidget {
                     trailing: Checkbox(
                       value: todo.done,
                       onChanged: (bool? value) {
-                        // ref.read(todoViewModelProvider.notifier).updateTodo(todo.copy(done: value!));
+                        todoViewModel.updateTodo(todo.copy(done: value!));
                       },
                     ),
                   );
