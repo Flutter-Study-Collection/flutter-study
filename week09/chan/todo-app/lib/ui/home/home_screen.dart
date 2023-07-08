@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../di/module.dart';
 import '../../model/result.dart';
 import '../../model/todo_item.dart';
-import '../../model/todo_response.dart';
-import '../../di/module.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({Key? key}) : super(key: key);
