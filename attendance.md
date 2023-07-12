@@ -2,7 +2,7 @@
 
 표시 방법: 자료제출/참여여부/발표여부
 
-| 회차  | Chan  | Wepol | chi       |.      |
+| 회차  | Chan  | Wepol | chi       | Cop   |
 |------|-------|-------|-----------|-------|
 |Week00| X/-   | -     | -         | -     |
 |Week01| O/O/O | -     | -         | -     |
@@ -13,4 +13,4 @@
 |Week06| O/O/O | X/O/O | X/O/O     | -     |
 |Week07| O/O/O | O/O/O | X/O/O     | -     |
 |Week08| O/O/O | O/O/O | X/O/O     | -     |
-|Week09| -     | -     | -         | -     |
+|Week09| O/O/O | X/O/O | X/O/O     | X     |
