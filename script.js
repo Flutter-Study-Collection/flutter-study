@@ -1,13 +1,13 @@
 const axios = require('axios');
 const moment = require('moment');
 
-const since = moment().day(6).hour(12).minute(0).second(0).subtract(2, 'weeks').toISOString();
-const until = moment().day(6).hour(12).minute(0).second(0).toISOString();
+async function run() {
+    const since = moment().day(6).hour(12).minute(0).second(0).subtract(2, 'weeks').toISOString();
+    const until = moment().day(6).hour(12).minute(0).second(0).toISOString();
 
-axios.get('https://api.github.com/repos/Flutter-Study-Collection/flutter-study/commits?since=' + since + '&until=' + until)
-  .then(response => {
+    const response = await axios.get(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/commits?since=${since}&until=${until}`);
+
     const authors = {};
-
     response.data.forEach(commit => {
       const author = commit.commit.author.name;
       authors[author] = (authors[author] || 0) + 1;
@@ -25,8 +25,8 @@ axios.get('https://api.github.com/repos/Flutter-Study-Collection/flutter-study/c
     };
 
     const chartUrl = 'https://quickchart.io/chart?c=' + encodeURIComponent(JSON.stringify(chartData));
+
     console.log(chartUrl);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+}
+
+run().catch(error => console.error(error));
