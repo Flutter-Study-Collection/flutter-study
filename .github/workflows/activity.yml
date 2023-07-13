@@ -40,17 +40,19 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "Here is the commit activity for the last two weeks"
+                  "text": "Here is the commit activity for the last two weeks",
+                  "emoji": true
                 }
               },
               {
                 "type": "image",
                 "title": {
                   "type": "plain_text",
-                  "text": "Latest data"
+                  "text": "Latest data",
+                  "emoji": true
                 },
                 "block_id": "quickchart-image",
-                "image_url": "${{ env.URL }}",
+                "image_url": "${{ env.CHART_URL }}",
                 "alt_text": "Chart showing latest data"
               }
             ]
