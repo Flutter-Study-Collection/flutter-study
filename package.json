@@ -1,0 +1,26 @@
+{
+  "name": "flutter-study",
+  "version": "1.0.0",
+  "description": "플러터 입문을 시작으로 실무에서 주니어로서 '꾸준히', '오래' 성장하기 위한 스터디. 여기는 그 기록을 남기는 저장소.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flutter-Study-Collection/flutter-study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flutter-Study-Collection/flutter-study/issues"
+  },
+  "homepage": "https://github.com/Flutter-Study-Collection/flutter-study#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "canvas": "^2.11.2",
+    "chart.js": "^4.3.0",
+    "moment": "^2.29.4"
+  }
+}

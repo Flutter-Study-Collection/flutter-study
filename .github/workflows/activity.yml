@@ -1,0 +1,36 @@
+name: Generate and Send Commit Graph
+
+on:
+  schedule:
+    - cron:  '0 12 * * 6'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run script
+      run: node script.js
+
+    - name: Send message to Slack
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,commit,author
+        text: "Here is the commit activity for the last two weeks"
+        attachments: '[{"fallback": "fallback text", "title": "Commit graph", "image_url": "https://raw.githubusercontent.com/Flutter-Study-Collection/flutter-study/main/chart.png"}]'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      if: always()
+
