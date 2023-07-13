@@ -35,7 +35,6 @@ jobs:
         fields: repo,commit,author
         custom_payload: |
           {
-            "text": "Here is the commit activity for the last two weeks",
             "blocks": [
               {
                 "type": "section",
