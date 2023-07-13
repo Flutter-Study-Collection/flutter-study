@@ -37,12 +37,12 @@ jobs:
           {
             "blocks": [
               {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "Here is the commit activity for the last two weeks",
-                  "emoji": true
-                }
+                  "type": "section",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "2주간 활동 기록",
+                    "emoji": true
+                  }
               },
               {
                 "type": "image",
