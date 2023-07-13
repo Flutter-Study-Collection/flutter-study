@@ -29,20 +29,16 @@ jobs:
         GITHUB_ENV: ${{ runner.temp }}/env
     
     - name: Send message to Slack
-      uses: 8398a7/action-slack@v3
-      with:
-        status: ${{ job.status }}
-        fields: repo,commit,author
-        custom_payload: |
-          {
+      run: |
+        curl -X POST -H 'Content-type: application/json' --data '{
             "blocks": [
               {
-                  "type": "section",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "2주간 활동 기록",
-                    "emoji": true
-                  }
+                "type": "section",
+                "text": {
+                  "type": "plain_text",
+                  "text": "2주간 활동 기록",
+                  "emoji": true
+                }
               },
               {
                 "type": "image",
@@ -56,8 +52,7 @@ jobs:
                 "alt_text": "Chart showing latest data"
               }
             ]
-          }
+          }' ${{ secrets.ACTIVITY_SLACK_WEBHOOK_URL }}
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        URL: ${{ steps.chart.outputs.url }}
+        CHART_URL: ${{ steps.chart.outputs.url }}
       if: always()
