@@ -1,6 +1,7 @@
 name: Generate and Send Commit Graph
 
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 12 * * 6'
 
