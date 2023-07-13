@@ -26,7 +26,7 @@ async function run() {
     };
 
     const chartUrl = 'https://quickchart.io/chart?c=' + encodeURIComponent(JSON.stringify(chartData));
-    fs.writeFileSync(process.env.GITHUB_ENV, `URL=${chartUrl}\n`, {flag: 'a'});
+    fs.writeFileSync(process.env.GITHUB_ENV, `CHART_URL=${chartUrl}\n`, {flag: 'a'});
 }
 
 run().catch(error => {
