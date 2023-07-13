@@ -26,7 +26,6 @@ async function run() {
     };
 
     const chartUrl = 'https://quickchart.io/chart?c=' + encodeURIComponent(JSON.stringify(chartData));
-    const chartUrl = 'https://quickchart.io/chart?c=' + encodeURIComponent(JSON.stringify(chartData));
     fs.writeFileSync(process.env.GITHUB_ENV, `URL=${chartUrl}\n`, {flag: 'a'});
 }
 
