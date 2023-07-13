@@ -27,7 +27,10 @@ jobs:
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
         GITHUB_ENV: ${{ runner.temp }}/env
-    
+        
+    - name: Debug output
+      run: echo ${{ env.CHART_URL }}
+      
     - name: Send message to Slack
       run: |
         curl -X POST -H 'Content-type: application/json' --data '{
