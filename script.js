@@ -1,5 +1,6 @@
 const axios = require('axios');
 const moment = require('moment');
+const fs = require('fs');
 
 async function run() {
     const since = moment().day(6).hour(12).minute(0).second(0).subtract(2, 'weeks').toISOString();
@@ -25,8 +26,8 @@ async function run() {
     };
 
     const chartUrl = 'https://quickchart.io/chart?c=' + encodeURIComponent(JSON.stringify(chartData));
-
-    console.log(`::set-output name=url::${chartUrl}`);
+    const chartUrl = 'https://quickchart.io/chart?c=' + encodeURIComponent(JSON.stringify(chartData));
+    fs.writeFileSync(process.env.GITHUB_ENV, `URL=${chartUrl}\n`, {flag: 'a'});
 }
 
 run().catch(error => {
