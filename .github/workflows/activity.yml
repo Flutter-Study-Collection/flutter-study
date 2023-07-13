@@ -20,13 +20,14 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-
+      
     - name: Generate QuickChart URL
       id: chart
       run: node script.js
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
-
+        GITHUB_ENV: ${{ runner.temp }}/env
+    
     - name: Send message to Slack
       uses: 8398a7/action-slack@v3
       with:
@@ -50,7 +51,7 @@ jobs:
                   "text": "Latest data"
                 },
                 "block_id": "quickchart-image",
-                "image_url": "${{ steps.chart.outputs.url }}",
+                "image_url": "${{ env.URL }}",
                 "alt_text": "Chart showing latest data"
               }
             ]
