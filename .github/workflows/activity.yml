@@ -21,12 +21,11 @@ jobs:
     - name: Install dependencies
       run: npm install
       
-    - name: Generate QuickChart URL
+    - name: Generate QuickChart URL  
       id: chart
-      run: node script.js
+      run: echo "::set-output name=url::$(node script.js)"
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
-        GITHUB_ENV: ${{ runner.temp }}/env
         
     - name: Debug output
       run: echo ${{ env.CHART_URL }}
@@ -51,7 +50,7 @@ jobs:
                   "emoji": true
                 },
                 "block_id": "quickchart-image",
-                "image_url": "${{ env.CHART_URL }}",
+                "image_url": "${{ steps.chart.outputs.url }}",
                 "alt_text": "Chart showing latest data"
               }
             ]
