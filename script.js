@@ -26,7 +26,10 @@ async function run() {
 
     const chartUrl = 'https://quickchart.io/chart?c=' + encodeURIComponent(JSON.stringify(chartData));
 
-    console.log(chartUrl);
+    console.log(`::set-output name=url::${chartUrl}`);
 }
 
-run().catch(error => console.error(error));
+run().catch(error => {
+    console.error(error);
+    process.exit(1);
+});
