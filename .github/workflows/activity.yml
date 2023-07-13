@@ -21,38 +21,17 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Generate QuickChart URL and Send message to Slack
-      run: |
-        const since = moment().day(6).hour(12).minute(0).second(0).subtract(2, 'weeks').toISOString();
-        const until = moment().day(6).hour(12).minute(0).second(0).toISOString();
+    - name: Run script
+      id: chart
+      run: echo "::set-output name=url::$(node script.js)"
 
-        const response = await axios.get('https://api.github.com/repos/Flutter-Study-Collection/flutter-study/commits?since=' + since + '&until=' + until);
-
-        const authors = {};
-        response.data.forEach(commit => {
-          const author = commit.commit.author.name;
-          authors[author] = (authors[author] || 0) + 1;
-        });
-
-        const chartData = {
-          type: 'bar',
-          data: {
-            labels: Object.keys(authors),
-            datasets: [{
-              label: 'Commits',
-              data: Object.values(authors)
-            }]
-          }
-        };
-
-        const chartUrl = 'https://quickchart.io/chart?c=' + encodeURIComponent(JSON.stringify(chartData));
-        
-        axios.post(process.env.ACTIVITY_SLACK_WEBHOOK_URL, {
-          text: "Here is the commit activity for the last two weeks",
-          attachments: [{
-            fallback: "Commit graph",
-            image_url: chartUrl
-          }]
-        });
+    - name: Send message to Slack
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,commit,author
+        text: "Here is the commit activity for the last two weeks"
+        attachments: '[{"fallback": "fallback text", "title": "Commit graph", "image_url": "${{ steps.chart.outputs.url }}"}]'
       env:
-        ACTIVITY_SLACK_WEBHOOK_URL: ${{ secrets.ACTIVITY_SLACK_WEBHOOK_URL }}
+        SLACK_WEBHOOK_URL: ${{ secrets.ACTIVITY_SLACK_WEBHOOK_URL }}
+      if: always()
