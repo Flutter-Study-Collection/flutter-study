@@ -1,31 +1,58 @@
-- name: Send message to Slack
-  uses: 8398a7/action-slack@v3
-  with:
-    status: ${{ job.status }}
-    fields: repo,commit,author
-    custom_payload: |
-      {
-        "text": "Here is the commit activity for the last two weeks",
-        "blocks": [
+name: Generate and Send Commit Graph
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 12 * * 6'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Generate QuickChart URL
+      id: chart
+      run: node script.js
+
+    - name: Send message to Slack
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,commit,author
+        custom_payload: |
           {
-            "type": "section",
-            "text": {
-              "type": "mrkdwn",
-              "text": "Here is the commit activity for the last two weeks"
-            }
-          },
-          {
-            "type": "image",
-            "title": {
-              "type": "plain_text",
-              "text": "Latest data"
-            },
-            "block_id": "quickchart-image",
-            "image_url": "${{ steps.chart.outputs.url }}",
-            "alt_text": "Chart showing latest data"
+            "text": "Here is the commit activity for the last two weeks",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Here is the commit activity for the last two weeks"
+                }
+              },
+              {
+                "type": "image",
+                "title": {
+                  "type": "plain_text",
+                  "text": "Latest data"
+                },
+                "block_id": "quickchart-image",
+                "image_url": "${{ steps.chart.outputs.url }}",
+                "alt_text": "Chart showing latest data"
+              }
+            ]
           }
-        ]
-      }
-  env:
-    SLACK_WEBHOOK_URL: ${{ secrets.ACTIVITY_SLACK_WEBHOOK_URL }}
-  if: always()
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.ACTIVITY_SLACK_WEBHOOK_URL }}
+      if: always()
