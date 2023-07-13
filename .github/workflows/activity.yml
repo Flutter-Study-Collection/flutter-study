@@ -31,6 +31,6 @@ jobs:
         text: "Here is the commit activity for the last two weeks"
         attachments: '[{"fallback": "fallback text", "title": "Commit graph", "image_url": "https://raw.githubusercontent.com/Flutter-Study-Collection/flutter-study/main/chart.png"}]'
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_WEBHOOK_URL: ${{ secrets.ACTIVITY_SLACK_WEBHOOK_URL }}
       if: always()
 
