@@ -30,7 +30,7 @@
 - 방식: 
 
 스터디 전용 슬랙
-1. 저희 슬랙에 오시고 싶으시면, [https://theflutter-study.slack.com](https://theflutter-study.slack.com)에 참여해주세요.
+1. 저희 슬랙에 오시고 싶으시면, [https://theflutter-study.slack.com](https://join.slack.com/t/theflutter-study/shared_invite/zt-1z6uyabw3-V0s2tAfLdpZWSnNa_FOEXQ)에 참여해주세요.
 2. 슬랙과 별개로 [스터디 참여 신청](https://forms.gle/JB47wU8vGaUEEEbX6) 하신 후 대기하시면, 팀원이 부족할 때 선별하여 팀원으로 초대해드립니다.
 3. 메시지를 읽으시면 이모지로 표시해주세요. 메시지가 없을 때, 활동이 없는 것으로 간주하여 참여의사 없음으로 간주합니다.
 4. 스터디 진행도를 파악하기 위해, Geekbot을 사용하여 2-3일 간격으로 '스터디 진행도' 질문을 합니다. 꼭 답변해주세요. 이 또한, 활동이 없는 것으로 간주하여 참여의사 없음으로 간주합니다.
