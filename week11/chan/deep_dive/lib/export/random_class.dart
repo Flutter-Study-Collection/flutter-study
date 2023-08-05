@@ -1,0 +1,1 @@
+String name_one = 'random_class';
