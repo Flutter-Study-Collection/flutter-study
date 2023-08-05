@@ -14,4 +14,5 @@
 |Week07| O/O/O | O/O/O | X/O/O     |
 |Week08| O/O/O | O/O/O | X/O/O     |
 |Week09| O/O/O | X/O/O | X/O/O     |
-|Week10| O/O/O | O/O/O | X/해외출장/X     |
+|Week10| O/O/O | O/O/O | X/해외출장/X |
+|Week11| O/O/O | X     | O/O/O |
