@@ -1,19 +1,18 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class StatefulWidgetPage extends StatefulWidget {
+  const StatefulWidgetPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<StatefulWidgetPage> createState() => _StatefulWidgetPageState();
 }
 
 // StatefulWidget은 별도의 State 클래스를 생성하게 됩니다.
 // 이건 매번 번거로울 뿐더러 State 클래스를 생성하면서 생기는 불필요한 코드가 많습니다.
-class _MyHomePageState extends State<MyHomePage> {
+class _StatefulWidgetPageState extends State<StatefulWidgetPage> {
   int _counter = 0; // 데이터를 유지하기 위해 멤버필드를 사용합니다. 혹은 provider를 사용할 수도 있습니다.
 
   void _incrementCounter() {

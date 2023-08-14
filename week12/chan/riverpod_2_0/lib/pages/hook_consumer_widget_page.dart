@@ -4,10 +4,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // 별도의 State 클래스를 생성할 필요가 없습니다. 하나의 Page 클래스에서 모든 것을 처리할 수 있습니다.
-class MyHomePage extends HookConsumerWidget {
+class HookConsumerWidgetPage extends HookConsumerWidget {
   final String title;
 
-  MyHomePage({super.key, required this.title});
+  HookConsumerWidgetPage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) { // WidgetRef 추가적으로 사용합니다.

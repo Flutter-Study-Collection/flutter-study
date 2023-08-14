@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_2_0/pages/consumer_widget_page.dart';
 import 'package:riverpod_2_0/pages/hook_consumer_widget_page.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HookConsumerWidgetPage(title: 'Flutter Demo Home Page'),
+      home: ConsumerWidgetPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
