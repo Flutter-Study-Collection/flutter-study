@@ -14,6 +14,8 @@ class HookConsumerWidgetPage extends HookConsumerWidget {
     // 데이터를 유지하기 위해 멤버필드나 provider를 사용할 필요없이 useState를 사용하면 데이터가 유지됩니다.
     // 내부적으로는 ValueNotifier를 사용합니다.
     var counter = useState(0);
+    var editController = useTextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -25,6 +27,9 @@ class HookConsumerWidgetPage extends HookConsumerWidget {
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
+            ),
+            TextField(
+              controller: editController,
             ),
             Text(
               '${counter.value}', // ValueNotifier이기 때문에 value로 데이터를 가져옵니다.
