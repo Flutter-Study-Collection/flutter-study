@@ -7,7 +7,6 @@
 정원 5명을 유지하려고 항시 모집하고 있습니다. 관심 있으신 분은 다음 링크로 신청해주세요.
 [스터디 참여 신청 링크](https://forms.gle/JB47wU8vGaUEEEbX6)
 
-
 ## 참여자 발자취
 
 |호칭될 닉네임|이메일|간단한 소개|시작일|종료일|출석|종료 사유|
@@ -18,7 +17,7 @@
 |~~Park~~|~~munchk8150@gmail.com~~|~~플러터 제가 한번 해보겠습니다 !~~|2023.3.1|2023.3.18|[보기](https://github.com/Flutter-Study-Collection/flutter-study/commit/b02fbbc3bd9a8b2f1646f14c023ec427a4b6628e)|부스트 캠프 등록|
 |~~Sejun~~|~~qpfjf56@gmail.com~~|~~많이 배우고 가겠습니다!~~|2023.3.1|2023.4.15|[보기](https://github.com/Flutter-Study-Collection/flutter-study/commit/b02fbbc3bd9a8b2f1646f14c023ec427a4b6628e)|2회 연속 불참, 미응답|
 |~~Winkberry~~|~~diestina91@gmail.com~~|~~플러터 열심히 배우겠습니다~~|2023.4.8|2023.5.14|[보기](https://github.com/Flutter-Study-Collection/flutter-study/commit/28c38883e0dee465f3130986d941a35f5531dbae)|2회 연속 불참, 미응답|
-|Wepol|episode0611@gmail.com|왕초보라 잘 부탁드립니다.|2023.4.8|-|-|-|
+|~~Wepol~~|~~episode0611@gmail.com~~|~~왕초보라 잘 부탁드립니다.~~|2023.4.8|2023.8.27|[보기](https://github.com/Flutter-Study-Collection/flutter-study/commit/04561185b16dd4fc757a483358d8fcf7b713180d#diff-cca3fec4cd4e02ffeb3099386e1e526e51003929d80f786f6470e27d2dd1a119)|불성실(학습 및 발표 준비 매우 미흡)|
 |chi|dti.ctusits@gmail.com|플러터로 실제 앱 런칭까지 목표입니다 화이팅! |2023.5.4|-|-|-|
 |~~johnkim7430~~|~~astorage9909@gmail.com~~|~~양산형 플러터 1인 개발자가 되는 것이 목표입니다.~~|2023.5.11|2023.5.28|미참여|미응답|
 |~~cob~~|~~how2logout@gmail.com~~|~~플러터로 저만의 앱과 웹을 구현하고 싶습니다.~~|2023.7.4|2023.7.8|미참여|미응답|
